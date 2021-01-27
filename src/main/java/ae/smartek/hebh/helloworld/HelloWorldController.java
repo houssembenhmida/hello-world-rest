@@ -14,9 +14,25 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HelloWorldController {
+
     @GetMapping("/hello")
-    public String greetings(){
+    public String hello() {
         return "Hello World\n";
     }
+
+    @GetMapping("/bye")
+    public String bye() {
+        return "Good bye\n";
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "3scale API management test\n";
+    }
     
+    @GetMapping("/")
+    public String root() {
+        return "test application is running\n";
+    }
+
 }

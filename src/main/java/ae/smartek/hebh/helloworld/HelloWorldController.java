@@ -30,9 +30,9 @@ public class HelloWorldController {
         return "3scale API management test\n";
     }
     
-    @GetMapping("/")
-    public String root() {
-        return "test application is running\n";
-    }
+//    @GetMapping("/")
+//    public String root() {
+//        return "test application is running\n";
+//    }
 
 }

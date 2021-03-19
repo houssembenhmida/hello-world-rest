@@ -10,13 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Maven@3
+- task: oc-cmd@2
   inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    connectionType: 'OpenShift Connection Service'
+    openshiftService: 'openshift'
+    cmd: 'oc new-app java:8~https://github.com/houssembenhmida/hello-world-rest.git --name=hello-world -n azure-deploy'
